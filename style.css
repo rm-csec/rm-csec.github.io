@@ -1,5 +1,5 @@
 body{
-  background: black; 
+  background: rgb(0, 0, 0); 
   color: white;
 }
 a{ /* navbar */
@@ -50,10 +50,13 @@ h1{
   font-style: italic;
 }
 .f-writeup {
-  color: #b5af9f;
+  color: #ffffff;
   display: flex;
   justify-content: center;
   padding: 0% 20% 0% 20%;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 .center {
   display: block;
@@ -77,6 +80,7 @@ h1{
   border-color: yellow;
   border-style:solid;
 	border-width: 1.4px;
+  background-color: black;
 }
 
 ul { /* navbar */
