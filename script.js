@@ -1,7 +1,7 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
-async function fetchData() {
+async function fetchData(file) {
   try {
-    const f = await fetch('/md/VikeCTF.md');
+    const f = await fetch(file);
     const data = await f.text();
     document.getElementById('render').innerHTML = marked.parse(data);
   }catch (error){
@@ -9,4 +9,4 @@ async function fetchData() {
     console.error('Error fetching data:', error);
   }
 }
-fetchData();
+document.getElementById("render").onload = fetchData('/md/VikeCTF.md');
