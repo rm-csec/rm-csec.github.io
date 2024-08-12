@@ -2,15 +2,18 @@ body{
   background: black; 
   color: white;
 }
-a{
+a{ /* navbar */
   color: white; 
   text-decoration: none;
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  margin:auto;
+  margin:5%;
   text-align: center;
   
+}
+a:hover{ /* navbar */
+  color:#fdf800;
 }
 .title-font {
   font-family: "JetBrains Mono", monospace;
@@ -60,4 +63,17 @@ h1{
 .navbar {
   width:300px;
   margin:auto;
+}
+
+ul { /* navbar */
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 50%;
+}
+
+div{ /* navbar */
+  text-align: center;
 }
