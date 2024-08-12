@@ -2,6 +2,10 @@ body{
   background: black; 
   color: white;
 }
+.TopBar{
+  display: flex;
+  justify-content: center;
+}
 a{
   color: #fdf800; 
   text-decoration: none;
@@ -40,4 +44,9 @@ h1{
   font-weight: 700;
   font-style: italic;
 }
-
+.f-writeup {
+  color: #b5af9f;
+  display: flex;
+  justify-content: center;
+  padding: 0% 20% 20% 20%;
+}

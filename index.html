@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+     <script src="script.js"></script> 
   </head> 
   <body>
     <div class="TopBar">
+      <!--To do: center the damn bar-->
       <a href="#">Home</a>
       <a href="#about">About</a>
       <a href="#schedule">Schedule</a>
@@ -20,21 +22,9 @@
   <div class="Logo">
     <h1 class="title-font">RMCSEC</h1>
   </div>
-  <md-block>
-	# Heading
-
-	Text **bold text** *italic text* ~strike~
-
-	```js
-	test.foo();
-	```
-
-	```html
-	&lt;foo>
-	```
-
-	* List item 1
-	* List item 2
-</md-block>
+    <div class="f-writeup">
+      <md-block id="render">
+      </md-block>
+    </div>
   </body>
 </html>
