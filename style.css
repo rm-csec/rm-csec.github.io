@@ -3,9 +3,14 @@ body{
   color: white;
 }
 a{
-  color: #fdf800; 
+  color: white; 
   text-decoration: none;
-  font-family: Menlo, Monaco, Liberation Mono; 
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin:auto;
+  text-align: center;
+  
 }
 .title-font {
   font-family: "JetBrains Mono", monospace;
@@ -41,3 +46,13 @@ h1{
   font-style: italic;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  width:300px;
+  margin:auto;
+}
