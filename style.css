@@ -2,10 +2,6 @@ body{
   background: black; 
   color: white;
 }
-.TopBar{
-  display: flex;
-  justify-content: center;
-}
 a{
   color: white; 
   text-decoration: none;
@@ -49,13 +45,11 @@ h1{
   font-weight: 700;
   font-style: italic;
 }
-<<<<<<< HEAD
 .f-writeup {
   color: #b5af9f;
   display: flex;
   justify-content: center;
   padding: 0% 20% 20% 20%;
-=======
 
 .center {
   display: block;
@@ -66,5 +60,4 @@ h1{
 .navbar {
   width:300px;
   margin:auto;
->>>>>>> a94977c2c97c9b50d31f6be08ad55cd67b60b0f3
 }
