@@ -7,9 +7,14 @@ body{
   justify-content: center;
 }
 a{
-  color: #fdf800; 
+  color: white; 
   text-decoration: none;
-  font-family: Menlo, Monaco, Liberation Mono; 
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin:auto;
+  text-align: center;
+  
 }
 .title-font {
   font-family: "JetBrains Mono", monospace;
@@ -44,9 +49,22 @@ h1{
   font-weight: 700;
   font-style: italic;
 }
+<<<<<<< HEAD
 .f-writeup {
   color: #b5af9f;
   display: flex;
   justify-content: center;
   padding: 0% 20% 20% 20%;
+=======
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar {
+  width:300px;
+  margin:auto;
+>>>>>>> a94977c2c97c9b50d31f6be08ad55cd67b60b0f3
 }
