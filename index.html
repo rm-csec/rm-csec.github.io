@@ -3,33 +3,35 @@
   <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rmcsec</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <script type="module" src="script.js"></script>
+    <script src="//code.jquery.com/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   </head> 
   <body>
     <!-- DO NOT PLACE ANYTHING ABOVE NAVBAR WITHIN BODY. BAD IDEA.-->
     <!--To do: navbar glow + add bg-->
-    <div>
-    <div class="navbar">  
-        <ul>
-          <a href="#">HOME</a>
-          <a href="#about">ABOUT</a>
-          <a href="#schedule">SCHEDULE</a>
-          <a href="#writeups">WRITEUPS</a>
-          <a href="#contact">CONTACT</a>
-        </ul>
+  <div id="nav-placeholder">
+  </div>
+  <script>
+    $(function(){
+      $("#nav-placeholder").load("nav.html");
+    });
+  </script>
+  <div id="home">
+    <div class="logo">
+      <img src="img/fullsize.png" width="30%" class="center" position="fixed"> 
     </div>
-  </div>
-  <div class="Logo">
-    <!--<h1 class="title-font">RMCSEC</h1>-->
-    <img src="img/fullsize.png" width="30%" class="center" position="fixed"> 
-  </div>
     <div class="f-writeup">
       <p id="render"></p>
     </div>
+  </div>
+  <div id="about" style="display: none;">
+    <h1>About Page</h1><p>Learn more about us on this page.</p>
+  </div>
 </body>
 </html>
