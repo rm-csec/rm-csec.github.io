@@ -38,9 +38,11 @@
         event.preventDefault();
         console.log(event);
         getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/" + event.target.pathname).then(ls =>{
-          for let (i in ls) {
-            document.getElementById('divWriteups').innerHTML = "<a href=\""+ ls[0].path + "\" class=\"dirList\" onclick=\"fetchData(\'"+ ls[0].path + "\', \'divWriteups\'); gg();\">> "+ ls[0].name +"</a>" + "<br>";
-          }
+          document.getElementById('divWriteups').innerHTML = ""; //cleanup div;
+          for (let i in ls) {
+            console.log(i);
+            document.getElementById('divWriteups').innerHTML += "<a href=\""+ ls[i].path + "\" class=\"dirList\" onclick=\"fetchData(\'"+ ls[i].path + "\', \'divWriteups\'); gg();\">> "+ ls[i].name +"</a>" + "<br>";
+          };
         }).catch(err => {
           console.log(err);
         });
