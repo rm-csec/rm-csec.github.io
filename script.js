@@ -9,4 +9,15 @@ async function fetchData(file) {
     console.error('Error fetching data:', error);
   }
 }
+async function getDirectory(dirname) {
+  let response = await fetch(dirname);
+  let str = await response.text();
+  console.log(str); // This is all data from a dir
+  let e = document.createElement('html');
+  e.innerHTML = str;
+  let list = e.getElementsByTagName("li")[0].getElementsByTagName("a");
+  console.log(list);
+
+}
+getDirectory("/md")
 document.getElementById("render").onload = fetchData('/md/VikeCTF.md');

@@ -57,10 +57,12 @@ h1{
   z-index: 1;
 }
 #divWriteups {
-  height: 90%;
-  width: 50%;
-  padding: auto;
-  border: 5px solid gray;
-  margin: 5% 30% 0% 25%;
+  border-radius: 25px;
+  box-sizing: border-box;
+  width: 70%;
+  height: 50%;
+  border: 1px solid yellow;
+  padding: 1%;
+  margin: 5% 15% 0%;
 } 
 
