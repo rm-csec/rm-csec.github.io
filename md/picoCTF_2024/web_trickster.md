@@ -1,6 +1,6 @@
-URL: http://atlas.picoctf.net:63046
+URL: `http://atlas.picoctf.net`
 
-When requesting http://atlas.picoctf.net:63046/robots.txt, you get
+When requesting `http://atlas.picoctf.net/robots.txt`, you get
 ```
 User-agent: *
 Disallow: /instructions.txt
