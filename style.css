@@ -51,11 +51,17 @@ h1{
   margin-left: auto;
   margin-right: auto;
 } 
-
+a {
+  color:#fdf800;
+  text-decoration: none;
+  font-family: "Space Mono";
+  font-style: normal;
+}
 .logo{
   margin: auto;
   z-index: 1;
 }
+
 #divWriteups {
   border-radius: 25px;
   box-sizing: border-box;
@@ -64,5 +70,24 @@ h1{
   border: 1px solid yellow;
   padding: 1%;
   margin: 5% 15% 0%;
-} 
-
+}
+.dirList{ /* navbar */
+  color: white; 
+  text-decoration: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin:5%;
+  text-align: center;
+  font-size: 1.1vw; 
+}
+.dirList:hover{ /* navbar */
+  color:#fdf800;
+}
+code {
+  background: #34373b;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}
