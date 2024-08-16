@@ -2,7 +2,22 @@ body{
   background: rgb(0, 0, 0); 
   color: white;
 }
-
+#fw-title{
+  font-family: "JetBrains Mono";
+  text-align: center;
+  color:#fdf800;
+}
+#notFound {
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 0% 20% 0% 20%;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  color: #fdf800;
+}
 .title-font {
   font-family: "JetBrains Mono", monospace;
   font-optical-sizing: auto;
