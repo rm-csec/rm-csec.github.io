@@ -4,7 +4,7 @@ async function getDirectory(dirName) {
   const data = await JSON.parse(str); //parsed into array
   return data;
 }
-function wfunc(){
+function wfunc(){ //W function
 getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
   for (let i in ls) {
     document.getElementById('divWriteups').innerHTML += "<a href=\""+ ls[i].path + "\" class=\"dirList\" onclick=\"cl()\">> "+ ls[i].name +"/</a>" + "<br>";
@@ -27,7 +27,7 @@ const cl = (event) => {
     console.log(err);
   });
 };
-const gg = (event) => {
+const gg = (event) => { //does anyone know what the hell is this
   event = event || window.event;
   event.preventDefault();
 };
