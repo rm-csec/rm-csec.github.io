@@ -9,6 +9,7 @@ async function fetchData(file, id) {
     console.error('Error fetching data:', error);
   }
 };
-//router
-
+export default fetchData;
 window.fetchData = fetchData;
+//router
+//fix this
