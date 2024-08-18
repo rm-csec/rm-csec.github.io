@@ -1,6 +1,7 @@
 body{
   background: rgb(0, 0, 0); 
   color: white;
+  margin:0;
 }
 #fw-title{
   font-family: "JetBrains Mono", monospace;
@@ -70,6 +71,7 @@ h1{
   font-style: italic;
 }
 .f-writeup {
+  position: relative;
   color: #ffffff;
   display: flex;
   justify-content: center;
@@ -78,6 +80,8 @@ h1{
   font-weight: 400;
   font-style: normal;
   margin: auto;
+  background-image: linear-gradient(rgba(255, 0, 0, 0) 0%, rgba(0,0,0,1) 15%, rgb(0, 0, 0) 100%);
+  z-index: 99;
 }
 .center {
   display: block;
@@ -93,6 +97,10 @@ a {
 .logo{
   margin: auto;
   z-index: 1;
+}
+
+#content{
+  z-index: 99;
 }
 
 #divWriteups {
@@ -157,15 +165,16 @@ ul { /* navbar */
   margin-top: 5vw;
 }
 
-section{
+section{ /* stars effect */
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 98vw;
   height: 100vh;
   background-size: cover;
   animation: animateBg 50s linear infinite;
   z-index: 1;
+  overflow: hidden;
 }
 
 @keyframes animateBg{
@@ -187,6 +196,7 @@ span{
   border-radius: 50%;
   box-shadow: 0 0 0 4px rgba(255,255,255,0.1),0 0 0 8px rgba(255,255,255,0.1),0 0 20px rgba(255,255,255,0.1);
   animation: animate 3s linear infinite;
+  z-index: -1;
 }
 span::before{
   content:'';
@@ -196,6 +206,7 @@ span::before{
   width: 300px;
   height: 1px;
   background: linear-gradient(90deg,#fff,transparent);
+  z-index: -1;
 }
 @keyframes animate
 {
