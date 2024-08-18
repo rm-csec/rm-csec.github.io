@@ -5,14 +5,10 @@ export async function getDirectory(dirName) {
   const data = await JSON.parse(str); //parsed into array
   return data;
 }
-<<<<<<< HEAD
-export function wfunc(){
-  getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
-=======
-function wfunc(){ //W function
+export function wfunc(){ //W function
 getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
   for (let i in ls) {
-    document.getElementById('divWriteups').innerHTML += "<a href=\""+ ls[i].path + "\" class=\"dirList\" onclick=\"cl()\">> "+ ls[i].name +"/</a>" + "<br>";
+    document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
   } 
 }).catch(err => {
   console.log(err);
@@ -24,7 +20,6 @@ const cl = (event) => {
   console.log(event);
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/" + event.target.pathname).then(ls =>{
     document.getElementById('divWriteups').innerHTML = ""; //cleanup div;
->>>>>>> f57ba7cb0149153e62325eed513df31bf5969301
     for (let i in ls) {
       document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
     }
