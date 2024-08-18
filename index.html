@@ -1,68 +1,24 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+  <!--404-->
   <title>rmcsec</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
   <script type="module" src="/js/script.js"></script>
-  <script type="module" src="/js/route.js"></script>
+  <script src="/js/route.js" type='module'></script>
   <script src="/js/writeups.js" type='module'></script>
-<style>
-.navbar {
-  width: 50vw;
-  margin: auto;
-  margin-top: 4vw;
-  padding-left: 1em;
-  padding-right: 1em;
-  box-sizing: border-box;
-  border-radius: 40px;
-  position: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99;
-  border-color: yellow;
-  border-style:solid;
-	border-width: 1.4px;
-  background-color: black;
-}
-.l{ /* navbar */
-  color: white; 
-  text-decoration: none;
-  font-family: "Space Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-  margin:5%;
-  text-align: center;
-  font-size: 1.1vw; 
-}
-.l:hover{ /* navbar */
-  color:#fdf800;
-}
-ul { /* navbar */
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 1.2vw;
-  overflow: hidden;
-  width: 100%;
-	height: 10%;
-  
-}
-#nav{ /* navbar */
-  text-align: center;
-  display: inline-block;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5vw;
-}
-</style>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <script type="module" src="js/script.js"></script>
+  <script src="js/route.js"></script>
+  <script src="js/writeups.js"></script>
+  <style>
+      @import url('styles/style.css');
+  </style>
 </head>
 <body>
   <div id="nav">
@@ -71,11 +27,13 @@ ul { /* navbar */
           <a href="/" class="l">HOME</a>
           <a href="/" class="l">ABOUT</a>
           <a href="/" class="l">SCHEDULE</a>
-          <a href="/writeups" class="l" id="lWriteups">WRITEUPS</a>
+          <a href="/writeups" class="l" id="lWriteups" onclick="wfunc();">WRITEUPS</a>
           <a href="/" class="l">CONTACT</a>
         </ul>
   </div>
   </div>
-  <div id="content"></div>
+  <div id="content">
+
+  </div>
 </body>
 </html>
