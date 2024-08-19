@@ -2,6 +2,7 @@ body{
   background: rgb(0, 0, 0); 
   color: white;
   margin:0;
+  padding: 0;
 }
 #fw-title{
   font-family: "JetBrains Mono", monospace;
@@ -81,7 +82,7 @@ h1{
   font-style: normal;
   margin: auto;
   background-image: linear-gradient(rgba(255, 0, 0, 0) 0%, rgba(0,0,0,1) 15%, rgb(0, 0, 0) 100%);
-  z-index: 99;
+  z-index: 98;
 }
 .center {
   display: block;
@@ -162,7 +163,7 @@ ul { /* navbar */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 5vw;
+  margin-top: 3vw;
 }
 
 section{ /* stars effect */
@@ -295,4 +296,14 @@ span:nth-child(9){
   animation-delay: 2.75s;
   animation-duration: 2.75s;
 }
-
+footer{
+  margin-top: 20%;
+  height: 15vw;
+  background: linear-gradient(rgb(0, 0, 0) 0%, rgba(7, 7, 7, 0.712) 20%, rgb(7, 7, 7) 100%);
+  display: inline-block;
+  width: 100%;
+} 
+a{
+  padding:0;
+  margin:0;
+}
