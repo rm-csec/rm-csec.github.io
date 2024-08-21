@@ -51,4 +51,5 @@ Array.from(items).forEach(function(items){
 });
 window.onpopstate = handleLocation;
 export default route;
+
 //let path = window.location.pathname.replace("/writeups/", "");

@@ -14,6 +14,7 @@ getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md
   console.log(err);
 });
 };
+/*
 const cl = (event) => {
   event = event || window.event;
   event.preventDefault();
@@ -27,6 +28,7 @@ const cl = (event) => {
     console.log(err);
   });
 };
+*/
 if(window.location.pathname == "/writeups"){
   wfunc();
 }
@@ -45,7 +47,7 @@ export function routeDir(pname){
   }).catch(err => {
     console.log(err);
   });
-}
+};
 /*
 const cl = (event) => {
   event = event || window.event;

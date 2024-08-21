@@ -9,7 +9,15 @@ async function fetchData(file, id) {
     console.error('Error fetching data:', error);
   }
 };
+if(window.location.pathname == "/"){
+  setTimeout(() => {
+    window.onload = fetchData('/md/n00bzCTF_2024/web_focus-on-yourSELF.md', 'render');
+  }, "100");
+}
+document.getElementById("home").onclick = function(){
+  setTimeout(() => {
+    window.onload = fetchData('/md/n00bzCTF_2024/web_focus-on-yourSELF.md', 'render');
+  }, "100");
+}; 
 export default fetchData;
-window.fetchData = fetchData;
-//router
 //fix this
