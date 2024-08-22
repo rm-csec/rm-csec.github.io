@@ -77,7 +77,8 @@ We can then upload the tar file which has the file with the payload name of `{{l
 ![ls](../../img/ls.png)
 
 Now we can see the flag file `flag_15b726a24e04cc6413cb15b9d91e548948dac073b85c33f82495b10e9efe2c6e.txt`. All we gotta do now is to `cat` the flag.
-We create a new file with the payload `{{lipsum.__globals__.os.popen("cat flag*").read()}}` as the filename and compress it into a tar file. Finally, after uploading it, we can view the flag
+We create a new file with the payload `{{lipsum.__globals__.os.popen("cat flag*").read()}}` as the filename and compress it into a tar file. Finally, after uploading it, we can view the flag.
+
 ![config](../../img/flag.png)
 
 #### The Fix?
