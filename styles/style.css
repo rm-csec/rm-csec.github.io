@@ -126,7 +126,16 @@ a {
   padding: 1%;
   margin: 5% 15% 0%;
 }
-.dirList{ /* navbar */
+#mobileDivWriteups {
+  border-radius: 25px;
+  box-sizing: border-box;
+  width: 70%;
+  height: 50%;
+  padding: 1%;
+  margin: 5% 15% 0%;
+  font-size: 3em;
+}
+.dirList{ /* directory */
   color: white; 
   text-decoration: none;
   font-family: "Space Mono", monospace;
@@ -134,9 +143,21 @@ a {
   font-style: normal;
   margin:5%;
   text-align: center;
-  font-size: 1.1vw; 
 }
-.dirList:hover{ /* navbar */
+.dirList:hover{ /* directory */
+  color:#fdf800;
+}
+.mobileDirList{ /* mobile directory */
+  color: white; 
+  text-decoration: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin:5%;
+  text-align: center;
+  font-size: 2em;
+}
+.mobileDirList:hover{ /* mobile directory */
   color:#fdf800;
 }
 code {
