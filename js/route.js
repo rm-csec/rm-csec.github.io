@@ -31,19 +31,41 @@ if(window.location.pathname.includes("/writeups/")){
   }else if(window.location.pathname.includes(".md")){
     let path = window.location.pathname.replace("/writeups/", "/md/");
     console.log(path);
-    getHTML("/pages/writeups.html");
+    if (screen.width <= 700){ //mobile detection
+      console.log("mobile mode triggered!");
+      getHTML("/pages/writeups-mobile.html");
+    }else{
+      getHTML("/pages/writeups.html");
+    }
     setTimeout(() => {
       fetchData(path, 'divWriteups');
     }, "100");
   }else{
-    getHTML("/pages/writeups.html");
-    setTimeout(() => {
-      routeDir(path);
-    }, "100");
+    if (screen.width <= 700){ //mobile detection
+      console.log("mobile mode triggered!");
+      getHTML("/pages/writeups-mobile.html");
+      setTimeout(() => {
+        routeDir(path);
+      }, "100");
+    } else{
+      getHTML("/pages/writeups.html");
+      setTimeout(() => {
+        routeDir(path);
+      }, "100");
+    }
+    
   }
 }
 else{
-  handleLocation();
+  if (screen.width <= 700){ //mobile detection
+    console.log("mobile mode triggered!");
+    getHTML("/pages/index-mobile.html");
+  } else{
+    console.log("desktop mode triggered!")
+    handleLocation();
+  }
+
+  
 }
 const items = document.querySelectorAll(".l");
 Array.from(items).forEach(function(items){
