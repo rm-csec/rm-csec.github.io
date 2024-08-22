@@ -18,7 +18,7 @@
 <body>
 <!--rmctf{h3ll0_7h3r3}-->
   <div id="nav">
-  <div class="navbar">  
+  <div class="navbar" id=navbar>  
         <ul>
           <a href="/" class="l" id="home">HOME</a>
           <a href="/" class="l">ABOUT</a>
@@ -31,14 +31,15 @@
   <div id="content">
 
   </div>
-  <script>
+<script>
     if(screen.width <= 700){
-      window.onLoad = function(){
+      console.log(1);
+      window.onload = function(){
         var element = document.getElementById('nav'); //stackoverflow my beloved
         element.parentNode.removeChild(element); 
       }
     }
-  </script>
+</script>
 </body>
 <script src="/js/route.js" type='module'></script>
 <script type="module" src="/js/script.js"></script>

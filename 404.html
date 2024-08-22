@@ -36,5 +36,14 @@
   <div id="content">
 
   </div>
+
+<script>
+    if(screen.width <= 700){
+      window.onload = function(){
+        var element = document.getElementById('nav'); //stackoverflow my beloved
+        element.parentNode.removeChild(element); 
+      }
+    }
+</script>
 </body>
 </html>
