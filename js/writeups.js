@@ -1,18 +1,22 @@
 import fetchData from "/js/script.js"
+
+//function that gets writeup data from the github api cuz dir listing is disabled for github pages :sob:
 export async function getDirectory(dirName) {
   let response = await fetch(dirName);
   let str = await response.text();// JSON data from github
   const data = await JSON.parse(str); //parsed into array
   return data;
 }
+
+//function that renders the ctf event lists for /writeups
 export function wfunc(){ //W function
-getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
-  for (let i in ls) {
-    document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
-  } 
-}).catch(err => {
-  console.log(err);
-});
+  getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
+    for (let i in ls) {
+      document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
+    } 
+  }).catch(err => {
+    console.log(err);
+  });
 };
 /*
 const cl = (event) => {
@@ -29,15 +33,22 @@ const cl = (event) => {
   });
 };
 */
-if(window.location.pathname == "/writeups"){
-  wfunc();
-}
-document.getElementById("lWriteups").onclick = function() {
-  setTimeout(() => {
-    wfunc();
-  }, "100");
+const callback =  (mutations) => {
+   if (document.getElementById("divWriteups")) {
+        wfunc();
+        observer.disconnect();
+    }
 };
 
+var observer = new MutationObserver(callback);
+if(window.location.pathname == "/writeups"){
+  observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
+}
+document.getElementById("lWriteups").onclick = function() {
+  observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
+};
+
+//function that renders /writeups/ctfname 
 export function routeDir(pname){
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md/" + pname).then(ls =>{
   document.getElementById('divWriteups').innerHTML = ""; //cleanup div;

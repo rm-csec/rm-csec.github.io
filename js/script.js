@@ -1,4 +1,6 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js";
+//TO DO: Performace improvements, mobile ver, other pages
+//function that renders markdown file inside a specific element
 async function fetchData(file, id) {
   try {
     const f = await fetch(file);
@@ -9,15 +11,22 @@ async function fetchData(file, id) {
     console.error('Error fetching data:', error);
   }
 };
-if(window.location.pathname == "/"){
-  setTimeout(() => {
-    window.onload = fetchData('/md/n00bzCTF_2024/web_focus-on-yourSELF.md', 'render');
-  }, "100");
-}
+
+//function to execute when "render" div is loaded
+const callback =  (mutations) => {
+   if (document.getElementById("logo")) {
+        fetchData('/md/n00bzCTF_2024/web_focus-on-yourSELF.md', 'render');
+        observer.disconnect();
+    }
+};
+
+//observe for the div "render" to appear in dom
+var observer = new MutationObserver(callback);
+observer.observe(document, {attributes: true, childList: true, characterData: false, subtree:true});
+
+//same thing but for navbar button
 document.getElementById("home").onclick = function(){
-  setTimeout(() => {
-    window.onload = fetchData('/md/n00bzCTF_2024/web_focus-on-yourSELF.md', 'render');
-  }, "100");
+  observer.observe(document, {attributes: true, childList: true, characterData: false, subtree:true});
 }; 
 export default fetchData;
 //fix this
