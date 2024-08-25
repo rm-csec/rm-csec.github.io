@@ -25,8 +25,8 @@ html, body {
   color: #fdf800;
 }
 .navbar {
-  width: 50vw;
-  margin: auto;
+  width: 60vw;
+  margin: 3vw;
   margin-top: 4vw;
   padding-left: 1em;
   padding-right: 1em;
@@ -41,6 +41,7 @@ html, body {
   border-style:solid;
 	border-width: 1.4px;
   background-color: black;
+  text-align: center;
 }
 .title-font {
   font-family: "JetBrains Mono", monospace;
@@ -181,9 +182,13 @@ code {
   margin:4%;
   text-align: center;
   font-size: 1.1vw; 
+  vertical-align: middle;
+  transition: 0.5s;
 }
 .l:hover{ /* navbar */
   color:#fdf800;
+  text-shadow: 0 0 3px #fdf800; /* glow */
+  transition: 0.5s;
 }
 
 ul { /* navbar */
@@ -203,6 +208,7 @@ ul { /* navbar */
   align-items: center;
   justify-content: center;
   margin-top: 3vw;
+  width: auto;
 }
 
 section{ /* stars effect */
