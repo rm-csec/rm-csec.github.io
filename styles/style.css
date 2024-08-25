@@ -123,6 +123,19 @@ a {
   z-index: 99;
 }
 
+#render{
+  animation: fadein 0.5s;
+}
+
+#divWriteups{
+  animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 #divWriteups {
   border-radius: 25px;
   box-sizing: border-box;
