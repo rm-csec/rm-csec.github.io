@@ -11,7 +11,7 @@ async function fetchData(file, id) {
     console.error('Error fetching data:', error);
   }
 };
-
+/*
 //function to execute when "render" div is loaded
 const callback =  (mutations) => {
    if (document.getElementById("logo")) {
@@ -27,6 +27,7 @@ observer.observe(document, {attributes: true, childList: true, characterData: fa
 //same thing but for navbar button
 document.getElementById("home").onclick = function(){
   observer.observe(document, {attributes: true, childList: true, characterData: false, subtree:true});
-}; 
+};
+*/
 export default fetchData;
 //fix this

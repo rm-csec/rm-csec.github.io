@@ -22,6 +22,8 @@ const routes = {
     "/" : "/pages/index.html",
     "/writeups": "/pages/writeups.html",
     "/writeups/": "/pages/writeups.html",
+    "/about": "/pages/about.html",
+    "/members": "/pages/members.html",
 };
 
 //function that handles rendering the routes accordingly
