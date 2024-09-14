@@ -35,65 +35,71 @@ const handleLocation = async () => {
 
 //routing for writeups page starts here
 //messy ahh
-if(window.location.pathname.includes("/writeups/")){
-  let path = window.location.pathname.replace("/writeups/", ""); //get where in writeups ur supposed to go
-  if (path == ""){
-    //blank means just /writeups/
-    handleLocation();
-  }else if(window.location.pathname.includes(".md")){ //This is for actual writeupfile routes not folder routes
-    let path = window.location.pathname.replace("/writeups/", "/md/"); //get file name
-    const callback =  (mutations) => {
-       if (document.getElementById("divWriteups")) {
-            fetchData(path, 'divWriteups'); //render
-            observer.disconnect();
-        }
-    };
-    var observer = new MutationObserver(callback);
-    //console.log(path);
-    if (screen.width <= 700){ //mobile detection
-      console.log("mobile mode triggered!");
-      getHTML("/pages/writeups-mobile.html");
-    }else{
-      getHTML("/pages/writeups.html");
-    }
-    observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true}); 
-  }else{ //This is for folder routes like /writeups/ctfname
-    const callback =  (mutations) => {
-       if (document.getElementById("divWriteups")) {
-            routeDir(path); //render
-            observer.disconnect();
-        }
-    };
-    var observer = new MutationObserver(callback);
-    if (screen.width <= 700){ //mobile detection
-      console.log("mobile mode triggered!");
-      getHTML("/pages/writeups-mobile.html");
+function handle() {
+  if(window.location.pathname.includes("/writeups/")){
+    let path = window.location.pathname.replace("/writeups/", ""); //get where in writeups ur supposed to go
+    if (path == ""){
+      //blank means just /writeups/
+      handleLocation();
+    }else if(window.location.pathname.includes(".md")){ //This is for actual writeupfile routes not folder routes
+      let path = window.location.pathname.replace("/writeups/", "/md/"); //get file name
+      const callback =  (mutations) => {
+         if (document.getElementById("divWriteups")) {
+              fetchData(path, 'divWriteups'); //render
+              observer.disconnect();
+          }
+      };
+      var observer = new MutationObserver(callback);
+      //console.log(path);
+      if (screen.width <= 700){ //mobile detection
+        console.log("mobile mode triggered!");
+        getHTML("/pages/writeups-mobile.html");
+      }else{
+        getHTML("/pages/writeups.html");
+      }
       observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true}); 
+    }else{ //This is for folder routes like /writeups/ctfname
+      const callback =  (mutations) => {
+         if (document.getElementById("divWriteups")) {
+              routeDir(path); //render
+              observer.disconnect();
+          }
+      };
+      var observer = new MutationObserver(callback);
+      if (screen.width <= 700){ //mobile detection
+        console.log("mobile mode triggered!");
+        getHTML("/pages/writeups-mobile.html");
+        observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true}); 
+      } else{
+        getHTML("/pages/writeups.html");
+        observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true}); 
+      }
+      
+    }
+  }
+  else{ //If the req is not for /writeups, handle accordingly
+    //handleLocation();
+    if (screen.width <= 700){ //mobile detection
+      console.log("mobile mode triggered!");
+      getHTML("/pages/index-mobile.html");
     } else{
-      getHTML("/pages/writeups.html");
-      observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true}); 
+      console.log("desktop mode triggered!")
+      handleLocation();
     }
-    
   }
-}
-else{ //If the req is not for /writeups, handle accordingly
-  if (screen.width <= 700){ //mobile detection
-    console.log("mobile mode triggered!");
-    getHTML("/pages/index-mobile.html");
-  } else{
-    console.log("desktop mode triggered!")
-    handleLocation();
-  }
-
-  
 }
 //listner for navbar clicks
 const items = document.querySelectorAll(".l");
 Array.from(items).forEach(function(items){
   items.addEventListener('click', route);
 });
-
+handle();
 //handles back and forward arrows for browser
-window.onpopstate = handleLocation;
+window.onpopstate = (event) => {
+  /*console.log(
+    `location: ${document.location}, state: ${JSON.stringify(event.state)}`,
+  );*/
+  document.location.reload();
+};
 export default route;
 
