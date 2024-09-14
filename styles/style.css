@@ -25,7 +25,7 @@ html, body {
   color: #fdf800;
 }
 .navbar {
-  width: 60vw;
+  width: 45vw;
   margin: 3vw;
   margin-top: 4vw;
   padding-left: 1em;
@@ -91,6 +91,7 @@ a {
 .logo{
   margin: auto;
   z-index: 1;
+  animation: fadein 0.5s
 }
 
 #content{
@@ -163,7 +164,7 @@ code {
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  margin:4%;
+  margin:5%;
   text-align: center;
   font-size: 1.1vw; 
   vertical-align: middle;
