@@ -50,8 +50,8 @@ html, body {
   font-style: normal;
 }
 h1{
-  text-align: center;
-  color: white;
+  font-family: "Space Mono", monospace;
+  font-size: medium;
 }
 .body-font-regular {
   font-family: "Space Mono", monospace;
@@ -115,6 +115,7 @@ a {
   height: 50%;
   padding: 1%;
   margin: 5% 15% 0%;
+  font-family: "Space Mono", monospace;
 }
 #mobileDivWriteups {
   border-radius: 25px;
@@ -125,6 +126,55 @@ a {
   margin: 5% 15% 0%;
   font-size: 3em;
 }
+.f-writeup1 {
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 2% 20% 0% 20%;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  background-image: linear-gradient(rgba(255, 0, 0, 0) 0%, rgba(0,0,0,1) 20%, rgb(0, 0, 0) 100%);
+  z-index: 98;
+}
+.f-writeup2 {
+  position: relative;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  padding: 2% 20% 0% 20%;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  margin: auto;
+  z-index: 98;
+  background-color: black;
+}
+
+
+/* writeup fonts */
+h2{
+  font-family: "Jetbrains Mono", monospace;
+}
+p{
+  font-family: "Space Mono", monospace;
+  font-size: medium;
+}
+li{
+  font-family: "Space Mono", monospace;
+}
+ol{
+  font-family: "Space Mono", monospace;
+}
+p2{
+  font-family: "Space Mono", monospace;
+  font-size: large;
+}
+/* end writeup fonts */
+
+
 .dirList{ /* directory */
   color: white; 
   text-decoration: none;
@@ -329,12 +379,11 @@ span:nth-child(10){
 footer{
   height: 15vw;
   bottom: 0;
-  position: fixed;
-  background-image: linear-gradient(rgba(255, 0, 0, 0) 0%, rgba(0,0,0,1) 15%, rgb(0, 0, 0) 100%);
+  margin-top: 20%;
   display: inline-block;
   width: 100%;
   z-index: 98;
-  animation: fadein 0.5s;
+  background: linear-gradient(rgb(0, 0, 0) 0%, rgba(7, 7, 7, 0.712) 20%, rgb(7,7,7) 100%);
 } 
 .footer-content {
   display: flex;
