@@ -42,6 +42,23 @@
       }
     }
 </script>
+
+<script> //hamburger menu script
+  function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('active');
+  
+  // Fade in each menu item one at a time
+  const menuItems = document.querySelectorAll('.menu-item');
+  let delay = 0.1; // Start delay for the first item
+  menuItems.forEach(item => {
+    item.style.transitionDelay = delay + 's';
+    item.style.opacity = menu.classList.contains('active') ? '1' : '0';
+    delay += 0.1; // Increment delay for each item
+  });
+  }
+  </script>
+
 </body>
 <script src="/js/route.js" type='module'></script>
 <script type="module" src="/js/script.js"></script>

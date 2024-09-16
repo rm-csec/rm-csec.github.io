@@ -405,3 +405,52 @@ a{
   align-items: center;
   margin: 0 20px;
 }
+
+/* hamburglar */
+.menu-container {
+  position: fixed;
+  left: 0;
+  width: 100vw; /* Use viewport width */
+  height: 100vh; /* Use viewport height */
+  background: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s;
+  z-index: 10000;
+  bottom: 2vw;
+}
+.menu-container.active {
+  opacity: 1;
+  visibility: visible;
+}
+.menu-item {
+  opacity: 0;
+  margin: 1vw; 
+  transition: opacity 0.5s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100000;
+  width: 100%;
+  padding: 5%; 
+}
+.hamburger {
+  position: fixed;
+  top: 0.001vw; /* Use 2% top position */
+  right: 0.001vw; /* Use 2% right position */
+  padding: 2.8vw 3.5vw;
+  cursor: pointer;
+  z-index: 200000;
+}
+.bar {
+  display: block;
+  width: 5vw; /* Use 2.5% width */
+  height: 0.6vw; /* Use 0.3% height */
+  margin: 1vw auto; /* Use 0.5% margin */
+  background-color: #ffffff;
+  transition: 0.3s;
+}
