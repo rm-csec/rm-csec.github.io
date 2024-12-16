@@ -1,13 +1,14 @@
 const callback =  (mutations) => {
    if (document.getElementById("rolliePollie")) {
         const element = document.getElementById("rolliePollie");
+        console.log(element.scrollHeight);
         let vale = element.scrollHeight - element.clientHeight; 
         element.addEventListener('scroll', () => {
           console.log(element.scrollTop);
-          if(element.scrollTop >= vale){
-            element.scrollTop = vale - (element.clientHeight*1.3);
+          if(element.scrollTop >= vale - 30){
+            element.scrollTop = 10;
           }else if(element.scrollTop <= 0){
-            element.scrollTop = 720;
+            element.scrollTop = vale - 40;
           }
         });
         observer.disconnect();
