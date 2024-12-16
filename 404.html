@@ -1,26 +1,29 @@
 <!DOCTYPE HTML>
+<!--idk-->
 <html>
 <head>
-  <!--404-->
   <title>rmcsec</title>
+  <link rel="modulepreload" href="/js/writeups.js">
+  <script type="text/javascript" src="/js/script.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
-  <script type="module" src="/js/script.js"></script>
-  <script src="/js/writeups.js" type='module'></script>
+  <script type="module" src="/js/funs.js"></script>
   <style>
       @import url('/styles/style.css');
   </style>
 </head>
 <body>
+
 <!--rmctf{h3ll0_7h3r3}-->
+<!--
   <div id="nav">
   <div class="navbar" id=navbar>  
         <ul>
-          <img src="/img/mini.png" style="width: 6%; display: inline-block; margin-right: 4%; vertical-align: middle;">
+          <img src="/img/mini.png" style="width: 6.5%; display: inline-block; margin-right: 5%; vertical-align: middle;">
           <a href="/" class="l" id="home">HOME</a>
           <a href="/about" class="l">ABOUT</a>
           <a href="/members" class="l">MEMBERS</a>
@@ -28,6 +31,7 @@
         </ul>
   </div>
   </div>
+  -->
   <div id="content">
 
   </div>
@@ -40,7 +44,24 @@
       }
     }
 </script>
+
+<script> //hamburger menu script
+  function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('active');
+  
+  // Fade in each menu item one at a time
+  const menuItems = document.querySelectorAll('.menu-item');
+  let delay = 0.1; // Start delay for the first item
+  menuItems.forEach(item => {
+    item.style.transitionDelay = delay + 's';
+    item.style.opacity = menu.classList.contains('active') ? '1' : '0';
+    delay += 0.1; // Increment delay for each item
+  });
+  }
+  </script>
+
 </body>
 <script src="/js/route.js" type='module'></script>
-<script type="module" src="/js/script.js"></script>
+<script type="module" src="/js/funs.js"></script>
 </html>

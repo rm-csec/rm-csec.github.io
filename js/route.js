@@ -1,5 +1,5 @@
 import { wfunc, getDirectory, routeDir } from "/js/writeups.js";
-import fetchData from "/js/script.js";
+import fetchData from "/js/funs.js";
 
 //This function is called whenevr you click on a link in the navbar
 //This makes it so that the site doesn't go to the original intended url
@@ -89,10 +89,18 @@ function handle() {
   }
 }
 //listner for navbar clicks
-const items = document.querySelectorAll(".l");
-Array.from(items).forEach(function(items){
-  items.addEventListener('click', route);
-});
+/*
+const callback =  (mutations) => {
+         if (document.querySelectorAll(".l")) {
+              const items = document.querySelectorAll(".l");
+              Array.from(items).forEach(function(items){
+                items.addEventListener('click', route);
+              });
+              observer.disconnect();
+          }
+}
+var observer = new MutationObserver(callback);
+*/
 handle();
 //handles back and forward arrows for browser
 window.onpopstate = (event) => {

@@ -1,4 +1,4 @@
-import fetchData from "/js/script.js"
+import fetchData from "/js/funs.js"
 
 //function that gets writeup data from the github api cuz dir listing is disabled for github pages :sob:
 export async function getDirectory(dirName) {
@@ -44,9 +44,11 @@ var observer = new MutationObserver(callback);
 if(window.location.pathname == "/writeups"){
   observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
 }
+/*
 document.getElementById("lWriteups").onclick = function() {
   observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
 };
+*/
 
 //function that renders /writeups/ctfname 
 export function routeDir(pname){

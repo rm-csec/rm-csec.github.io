@@ -79,8 +79,11 @@ h1{
 
 .center {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  left:50%;
+  top:30%;
+  position: fixed;
+  z-index: -1;
+  transform: translate(-50%, -50%);
 } 
 a {
   color:#fdf800;
@@ -90,12 +93,11 @@ a {
 }
 .logo{
   margin: auto;
-  z-index: 1;
   animation: fadein 0.5s
 }
 
 #content{
-  z-index: 99;
+  z-index: 100;
 }
 
 
@@ -213,15 +215,17 @@ code {
 
 .l{ /* navbar */
   color: white; 
+  width: inherit;
   text-decoration: none;
   font-family: "Space Mono", monospace;
   font-weight: 400;
   font-style: normal;
-  margin:5%;
-  text-align: center;
+  margin:2vw;
   font-size: 1.1vw; 
   vertical-align: middle;
   transition: 0.5s;
+  display:block;
+  z-index: 10;
 }
 .l:hover{ /* navbar */
   color:#fdf800;
@@ -260,7 +264,7 @@ section{ /* stars effect */
   z-index: 1;
   overflow: hidden;
 }
-
+/*
 @keyframes animateBg{
   0%,100%{
       transform: scale(1);
@@ -269,7 +273,8 @@ section{ /* stars effect */
       transform: scale(1.2);
   }
 }
-
+*/
+  /*
 span{
   position: absolute;
   top:50%;
@@ -379,14 +384,13 @@ span:nth-child(10){
   animation-delay: 2.75s;
   animation-duration: 2.75s;
 }
+*/
 footer{
-  height: 15vw;
+  height: 10vw;
   bottom: 0;
-  margin-top: 5%;
-  display: inline-block;
+  position: fixed;
   width: 100%;
   z-index: 98;
-  background: linear-gradient(rgb(0, 0, 0) 0%, rgba(7, 7, 7, 0.712) 20%, rgb(7,7,7) 100%);
 } 
 .footer-content {
   display: flex;
@@ -453,4 +457,18 @@ a{
   margin: 1vw auto; /* Use 0.5% margin */
   background-color: #ffffff;
   transition: 0.3s;
+}
+#rolliePollie{
+  overflow-y: auto;
+  position: relative;
+  height: 10.4vw;
+  display: inline-block;
+  left:43%;
+  margin-top: 24%;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  z-index: 10;
+}
+#rolliePollie::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
 }
