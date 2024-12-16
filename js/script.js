@@ -3,8 +3,8 @@ const callback =  (mutations) => {
         const element = document.getElementById("rolliePollie");
         element.addEventListener('scroll', () => {
           //console.log(element.scrollTop);
-          if(element.scrollTop >= 723){
-            element.scrollTop = 0;
+          if(element.scrollTop >= 722){
+            element.scrollTop = 2;
           }else if(element.scrollTop <= 1){
             element.scrollTop = 720;
           }
