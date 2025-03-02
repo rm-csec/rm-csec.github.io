@@ -1,5 +1,3 @@
-import fetchData from "/js/funs.js"
-
 //function that gets writeup data from the github api cuz dir listing is disabled for github pages :sob:
 export async function getDirectory(dirName) {
   let response = await fetch(dirName);
@@ -12,7 +10,7 @@ export async function getDirectory(dirName) {
 export function wfunc(){ //W function
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
     for (let i in ls) {
-      document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
+      document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;' id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
     } 
   }).catch(err => {
     console.log(err);
@@ -55,7 +53,7 @@ export function routeDir(pname){
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md/" + pname).then(ls =>{
   document.getElementById('divWriteups').innerHTML = ""; //cleanup div;
     for (let i in ls) {
-      document.getElementById('divWriteups').innerHTML += "<a href=\""+ ls[i].name + "\" class=\"dirList\">> "+ ls[i].name +"</a>" + "<br>";
+      document.getElementById('divWriteups').innerHTML += "<a href=\""+ ls[i].name + "\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;'>> "+ ls[i].name +"</a>" + "<br>";
     };
   }).catch(err => {
     console.log(err);

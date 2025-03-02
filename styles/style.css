@@ -118,6 +118,8 @@ a {
   padding: 1%;
   margin: 5% 15% 0%;
   font-family: "Space Mono", monospace;
+  font-size: 1vw;
+  font-weight: 300;
 }
 #mobileDivWriteups {
   border-radius: 25px;
@@ -164,7 +166,7 @@ h2{
 }
 p{
   font-family: "Space Mono", monospace;
-  font-size: medium;
+  font-size: 0.7vw;
 }
 li{
   font-family: "Space Mono", monospace;
@@ -205,12 +207,19 @@ p2{
   color:#fdf800;
 }
 code {
+  font-family: "JetBrains Mono", monospace;
   background: #34373b;
   word-wrap: break-word;
   box-decoration-break: clone;
-  padding: .1rem .3rem .2rem;
   border-radius: .2rem;
   white-space: pre-wrap;
+  font-size: 0.8vw;
+  font-weight: 100;
+}
+pre{
+  background: #34373b;
+  padding-bottom: .2rem;
+  border-radius: .8rem;
 }
 
 .l{ /* navbar */
