@@ -19,11 +19,13 @@ var obs = new MutationObserver(cb);
 */
 //preload
 if(window.location.pathname == "/"){
-  getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
-    sessionStorage.setItem("dir", JSON.stringify(ls));
-  }).catch(err => {
-    console.log(err);
-  });
+  if(!sessionStorage.getItem("dir")){
+    getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
+      sessionStorage.setItem("dir", JSON.stringify(ls));
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 }
 //function that renders the ctf event lists for /writeups
 export function wfunc(){ //W function
