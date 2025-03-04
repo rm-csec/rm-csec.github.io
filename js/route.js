@@ -45,6 +45,8 @@ function handle() {
       let path = window.location.pathname.replace("/writeups/", "/md/"); //get file name
       const callback =  (mutations) => {
          if (document.getElementById("divWriteups")) {
+              let e = window.location.pathname;
+              document.getElementById('divWriteups').innerHTML = "<a href=/>/</a><a href=/writeups>writeups/</a><a href=" + e.replace(/[^\/]+\.md$/,"") + ">"+ e.match(/(?<=writeups\/)([^\/]+\/)/g) + "</a>"+ e.match(/[^\/]+\.md$/) + "</b><br>"
               fetchData(path, 'divWriteups'); //render
               observer.disconnect();
           }
@@ -89,18 +91,6 @@ function handle() {
   }
 }
 //listner for navbar clicks
-/*
-const callback =  (mutations) => {
-         if (document.querySelectorAll(".l")) {
-              const items = document.querySelectorAll(".l");
-              Array.from(items).forEach(function(items){
-                items.addEventListener('click', route);
-              });
-              observer.disconnect();
-          }
-}
-var observer = new MutationObserver(callback);
-*/
 handle();
 //handles back and forward arrows for browser
 window.onpopstate = (event) => {

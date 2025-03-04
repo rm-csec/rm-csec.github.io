@@ -5,16 +5,46 @@ export async function getDirectory(dirName) {
   const data = await JSON.parse(str); //parsed into array
   return data;
 }
-
-//function that renders the ctf event lists for /writeups
-export function wfunc(){ //W function
+let c = [];
+/*
+const cb =  (mutations) => {
+         if (document.getElementById("lWriteups")) {
+              document.getElementById("lWriteups").addEventListener("mouseover", function(){
+                
+              });
+              obs.disconnect();
+          }
+}
+var obs = new MutationObserver(cb);
+*/
+//preload
+if(window.location.pathname == "/"){
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
-    for (let i in ls) {
-      document.getElementById('divWriteups').innerHTML += "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;' id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>" + "<br>";
-    } 
+    sessionStorage.setItem("dir", JSON.stringify(ls));
   }).catch(err => {
     console.log(err);
   });
+}
+//function that renders the ctf event lists for /writeups
+export function wfunc(){ //W function
+  if(!sessionStorage.getItem("dir")){
+    console.log(":(");
+    document.getElementById('divWriteups').innerHTML = "<a href=/>/</a><b>writeups/</b><br>"
+    getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md").then(ls =>{
+      for (let i in ls) {
+        document.getElementById('divWriteups').innerHTML += "<br>" + "<a href=\"writeups/"+ ls[i].name + "/\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;' id=\"" + ls[i].name + "\">> "+ ls[i].name +"/</a>";
+      } 
+    }).catch(err => {
+      console.log(err);
+    });
+  }else{
+    c = JSON.parse(sessionStorage.getItem("dir"));
+    console.log("werks");
+    document.getElementById('divWriteups').innerHTML = "<a href=/>/</a><b>writeups/</b><br>"
+    for(let i in c){
+        document.getElementById('divWriteups').innerHTML += "<br>" + "<a href=\"writeups/"+ c[i].name + "/\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;' id=\"" + c[i].name + "\">> "+ c[i].name +"/</a>";
+    }
+  }
 };
 /*
 const cl = (event) => {
@@ -31,13 +61,13 @@ const cl = (event) => {
   });
 };
 */
+
 const callback =  (mutations) => {
    if (document.getElementById("divWriteups")) {
         wfunc();
         observer.disconnect();
     }
 };
-
 var observer = new MutationObserver(callback);
 if(window.location.pathname == "/writeups"){
   observer.observe(document, {attributes: false, childList: true, characterData: false, subtree:true});
@@ -53,7 +83,8 @@ export function routeDir(pname){
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md/" + pname).then(ls =>{
   document.getElementById('divWriteups').innerHTML = ""; //cleanup div;
     for (let i in ls) {
-      document.getElementById('divWriteups').innerHTML += "<a href=\""+ ls[i].name + "\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;'>> "+ ls[i].name +"</a>" + "<br>";
+      document.getElementById('divWriteups').innerHTML = "<a href=/>/</a><a href=/writeups>writeups/</a><b>" + pname + "</b><br>"
+      document.getElementById('divWriteups').innerHTML += "<br><a href=\""+ ls[i].name + "\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;'>> "+ ls[i].name +"</a>";
     };
   }).catch(err => {
     console.log(err);
