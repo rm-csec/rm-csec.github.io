@@ -84,8 +84,8 @@ document.getElementById("lWriteups").onclick = function() {
 export function routeDir(pname){
   getDirectory("https://api.github.com/repos/rm-csec/rm-csec.github.io/contents/md/" + pname).then(ls =>{
   document.getElementById('divWriteups').innerHTML = ""; //cleanup div;
+  document.getElementById('divWriteups').innerHTML = "<a href=/>/</a><a href=/writeups>writeups/</a><b>" + pname + "</b><br>"
     for (let i in ls) {
-      document.getElementById('divWriteups').innerHTML = "<a href=/>/</a><a href=/writeups>writeups/</a><b>" + pname + "</b><br>"
       document.getElementById('divWriteups').innerHTML += "<br><a href=\""+ ls[i].name + "\" class=\"dirList\" style='font-size: 1vw;font-weight: 300;'>> "+ ls[i].name +"</a>";
     };
   }).catch(err => {
